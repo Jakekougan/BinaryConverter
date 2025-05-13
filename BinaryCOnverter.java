@@ -1,4 +1,9 @@
-public class BinaryConverter {
+import java.util.Scanner;
+
+/** class containing the methods that run the BinaryConverter program.
+ *
+ */
+public class BinaryCOnverter {
 
     /**
      * converts a given number as an int to a string representation of its value in binary.
@@ -63,10 +68,62 @@ public class BinaryConverter {
         return revString;
     }
 
+    /** runs the binary converter program.
+     *
+     */
+    public static void run() {
+        Scanner input = new Scanner(System.in);  // Create a Scanner object
+        System.out.println("Welcome to the BinaryConverter");
+        System.out.println("To begin specify if you are:");
+
+        int check = 0;
+        while (check == 0) {
+            System.out.println("1. Converting a number to binary string");
+            System.out.println("2. Converting a Binary String to a number!" + '\n'
+                + "3. EXIT" + '\n'
+                +  "Enter the corresponding number to select a function!");
+
+            String num = input.nextLine();  // Read user input
+            if (num.equals("1")) {
+                System.out.println("Enter a whole number to be converted to a binary string: ");
+                String number = input.nextLine();  // Read user input
+                try {
+                    String bin = toBinary(Integer.parseInt(number));
+                    System.out.println(bin + '\n');
+                }
+
+                catch (Exception e) {
+                    System.out.println("Invalid Response! Please try again.");
+                }
+
+            }
+            else if (num.equals("2")) {
+                System.out.println("Enter a binary string to be converted to a whole number: ");
+                String binStr = input.nextLine();  // Read user input
+                try {
+                    int number = toDecimal(binStr);
+                    System.out.println(number + '\n');
+                }
+
+                catch (Exception e) {
+                    System.out.println("Invalid Response! Please try again.");
+                }
+            }
+
+            else if (num.equals("3")) {
+                check = 1;
+            }
+            else {
+                System.out.println("Invalid Response! Please try again.");
+            }
+        }
+
+    }
+
     public static void main(String[] args) {
-        System.out.println("Hello world");
-        System.out.println(toBinary(13));
-        System.out.println(toDecimal("1011"));
+        run();
+
+
     }
 
 }
