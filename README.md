@@ -5,7 +5,7 @@ Author: Jake Kougan
 
 Purpose: 
   
-  While taking a computer organization and architecture class (aka CS256 for any of you IWU Titans out there). I found the process of converting values to and from binary on Homework assignments to be tedious.
+  While taking a computer organization and architecture class, aka CS256 for any of you IWU Titans out there, I found the process of converting values to and from binary on Homework assignments to be tedious.
   To circumvent this issue I wrote this quick Java program that does the heavy lifting for me, it was also a way to get some Java practice for my Algorithms class.
 
 How to use:
